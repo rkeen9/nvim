@@ -70,10 +70,13 @@ set nofoldenable
 "colour scheme and font
 set backspace=2
 set background=dark
-autocmd vimenter * colorscheme gruvbox
-autocmd vimenter * AirlineTheme gruvbox
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+"autocmd vimenter * AirlineTheme gruvbox
 set encoding=utf-8
 set guifont=Source_Code_Pro_for_Powerline:h11:cANSI:qDRAFT
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
 
 syntax on
 let g:netrw_browse_split = 1
