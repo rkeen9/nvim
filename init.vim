@@ -86,7 +86,8 @@ let g:coc_global_extensions = [
 "\ 'coc-prettier',
 "\ 'coc-eslint', 
 "\ 'coc-json', 
-\ 'coc-clangd'
+\ 'coc-clangd',
+\ 'coc-sh'
 \ ]
 
 " let b:coc_diagnostic_disable = 1
