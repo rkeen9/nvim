@@ -9,6 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'vimlab/split-term.vim'
 "Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -87,7 +88,6 @@ let g:coc_global_extensions = [
 "\ 'coc-eslint', 
 "\ 'coc-json', 
 \ 'coc-clangd',
-\ 'coc-sh'
 \ ]
 
 " let b:coc_diagnostic_disable = 1
@@ -142,3 +142,10 @@ map [] k$][%:silent! eval search('}', 'b')<CR>
 
 " opposite of shift+J
 :map <C-j> i<CR><Esc>
+
+" split resizing
+nnoremap <C-Left> :vertical resize -10 <CR>
+nnoremap <C-Right> :vertical resize +10 <CR>
+
+"scroll wheel
+set mouse=a
