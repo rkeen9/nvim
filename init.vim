@@ -9,6 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
+Plug 'vimlab/split-term.vim'
 "Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -67,7 +68,7 @@ noremap qq :q!<Return>
 
 set nofoldenable
 
-"colour scheme and font
+"colour scheme and font customized to use terminal transparency
 set backspace=2
 set background=dark
 colorscheme gruvbox
@@ -77,19 +78,18 @@ set encoding=utf-8
 set guifont=Source_Code_Pro_for_Powerline:h11:cANSI:qDRAFT
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
-
 syntax on
 let g:netrw_browse_split = 1
 
 " coc config
 let g:coc_global_extensions = [
 \ 'coc-snippets',
-\ 'coc-pairs',
+"\ 'coc-pairs',
 "\ 'coc-tsserver',
 "\ 'coc-prettier',
 "\ 'coc-eslint', 
 "\ 'coc-json', 
-\ 'coc-clangd'
+\ 'coc-clangd',
 \ ]
 
 " let b:coc_diagnostic_disable = 1
@@ -144,3 +144,10 @@ map [] k$][%:silent! eval search('}', 'b')<CR>
 
 " opposite of shift+J
 :map <C-j> i<CR><Esc>
+
+" split resizing
+nnoremap <C-Left> :vertical resize -10 <CR>
+nnoremap <C-Right> :vertical resize +10 <CR>
+
+"scroll wheel
+set mouse=a
