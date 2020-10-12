@@ -82,7 +82,7 @@ let g:netrw_browse_split = 1
 " coc config
 let g:coc_global_extensions = [
 \ 'coc-snippets',
-\ 'coc-pairs',
+"\ 'coc-pairs',
 "\ 'coc-tsserver',
 "\ 'coc-prettier',
 "\ 'coc-eslint', 
