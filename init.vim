@@ -158,7 +158,7 @@ map ]] j0[[%:silent! eval search('{')<CR>
 map [] k$][%:silent! eval search('}', 'b')<CR>
 
 " opposite of shift+J
-:map <C-j> i<CR><Esc>
+map <C-j> i<CR><Esc>
 
 " split resizing
 nnoremap <C-Left> :vertical resize -10 <CR>
@@ -178,3 +178,6 @@ set spell
 
 "latex preview
 let g:latex_pdf_viewer="zathura"
+
+"remap ` to space+m
+map <leader>m `
