@@ -79,7 +79,7 @@ nnoremap ;q :wq<Return>
 noremap ;; :w<Return>
 
 "qq to exit vim without saving
-noremap qq :q!<Return>
+noremap qq :q<Return>
 
 set nofoldenable
 
@@ -136,7 +136,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 :nnoremap <C-Tab> :buffers<CR>:buffer<Space>
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
-noremap bd :bdelete<Return>
+noremap <leader>d :bdelete<Return>
 
 " NerdTree open in tab
 let NERDTreeMapOpenInTab='\r'
@@ -170,7 +170,7 @@ nnoremap <C-Down> :resize +10 <CR>
 set mouse=a
 
 "ctrl+t to open termainal
-nnoremap <C-t> :Term <CR>
+nnoremap <leader>t :Term <CR>
 
 "enable spell checking
 set spelllang=en_ca
@@ -181,3 +181,6 @@ let g:latex_pdf_viewer="zathura"
 
 "remap ` to space+m
 map <leader>m `
+
+"vsplit with space+v
+nnoremap <leader>v :vsplit <CR>
