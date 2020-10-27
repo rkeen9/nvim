@@ -184,3 +184,6 @@ map <leader>m `
 
 "vsplit with space+v
 nnoremap <leader>v :vsplit <CR>
+
+"norm with space+n
+vnoremap <leader>n :norm 
