@@ -187,3 +187,6 @@ nnoremap <leader>v :vsplit <CR>
 
 "norm with space+n
 vnoremap <leader>n :norm 
+
+"remap @ (call macro) to space+;
+nnoremap <leader>; @
