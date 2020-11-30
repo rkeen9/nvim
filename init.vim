@@ -104,7 +104,7 @@ let g:coc_global_extensions = [
 "\ 'coc-prettier',
 "\ 'coc-eslint', 
 "\ 'coc-json', 
-\ 'coc-clangd',
+"\ 'coc-clangd',
 \ ]
 
 " let b:coc_diagnostic_disable = 1
@@ -129,8 +129,8 @@ inoremap <silent><expr> <C-space> coc#refresh()
 " shortcuts for buffer navigation
 set switchbuf=usetab
 
-" open Nerd Tree with ctrl+n
-nmap <C-n> :NERDTreeToggle<CR>
+" open Nerd Tree with space+N in normal mode
+nmap <leader>n :NERDTreeToggle<CR>
 " buffer navigation
 " F5 lists buffers
 :nnoremap <C-Tab> :buffers<CR>:buffer<Space>
