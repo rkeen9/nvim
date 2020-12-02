@@ -96,7 +96,7 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 syntax on
 let g:netrw_browse_split = 1
 
-" coc config
+" coc config begin
 let g:coc_global_extensions = [
 \ 'coc-snippets',
 "\ 'coc-pairs',
@@ -104,7 +104,7 @@ let g:coc_global_extensions = [
 "\ 'coc-prettier',
 "\ 'coc-eslint', 
 "\ 'coc-json', 
-"\ 'coc-clangd',
+\ 'coc-clangd',
 \ ]
 
 " let b:coc_diagnostic_disable = 1
@@ -120,6 +120,9 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
 
+"switch between header and source file with space+c
+nnoremap <leader>c :CocCommand clangd.switchSourceHeader
+" coc config end
 " shortcuts for tab navigation
 "nnoremap <C-Left> :tabprevious<CR>
 "nnoremap <C-Right> :tabnext<CR>
