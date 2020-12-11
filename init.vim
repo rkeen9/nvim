@@ -12,6 +12,7 @@ Plug 'preservim/nerdtree'
 Plug 'vimlab/split-term.vim'
 Plug 'conornewton/vim-latex-preview'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'vimwiki/vimwiki'
 " Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -129,14 +130,14 @@ inoremap <silent><expr> <C-space> coc#refresh()
 " shortcuts for buffer navigation
 set switchbuf=usetab
 
-" open Nerd Tree with ctrl+n
-nmap <C-n> :NERDTreeToggle<CR>
+" open Nerd Tree with space+n
+nmap <leader>n :NERDTreeToggle<CR>
 " buffer navigation
 " F5 lists buffers
 :nnoremap <C-Tab> :buffers<CR>:buffer<Space>
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
-noremap <leader>d :bdelete<Return>
+noremap <leader>d :bdelete!<Return>
 
 " NerdTree open in tab
 let NERDTreeMapOpenInTab='\r'
@@ -190,3 +191,8 @@ vnoremap <leader>n :norm
 
 "remap @ (call macro) to space+;
 nnoremap <leader>; @
+
+" vimwiki config
+let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
