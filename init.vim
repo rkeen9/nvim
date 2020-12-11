@@ -97,7 +97,7 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 syntax on
 let g:netrw_browse_split = 1
 
-" coc config
+" coc config begin
 let g:coc_global_extensions = [
 \ 'coc-snippets',
 "\ 'coc-pairs',
@@ -121,6 +121,9 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
 
+"switch between header and source file with space+c
+nnoremap <leader>c :CocCommand clangd.switchSourceHeader
+" coc config end
 " shortcuts for tab navigation
 "nnoremap <C-Left> :tabprevious<CR>
 "nnoremap <C-Right> :tabnext<CR>
@@ -130,7 +133,7 @@ inoremap <silent><expr> <C-space> coc#refresh()
 " shortcuts for buffer navigation
 set switchbuf=usetab
 
-" open Nerd Tree with space+n
+" open Nerd Tree with space+N in normal mode
 nmap <leader>n :NERDTreeToggle<CR>
 " buffer navigation
 " F5 lists buffers
