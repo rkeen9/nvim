@@ -12,6 +12,8 @@ Plug 'preservim/nerdtree'
 Plug 'vimlab/split-term.vim'
 Plug 'conornewton/vim-latex-preview'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'godlygeek/tabular'
+"Plug 'vimwiki/vimwiki'
 " Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -139,7 +141,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 :nnoremap <C-Tab> :buffers<CR>:buffer<Space>
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
-noremap <leader>d :bdelete<Return>
+noremap <leader>d :bdelete!<Return>
 
 " NerdTree open in tab
 let NERDTreeMapOpenInTab='\r'
@@ -193,3 +195,13 @@ vnoremap <leader>n :norm
 
 "remap @ (call macro) to space+;
 nnoremap <leader>; @
+
+" vimwiki config
+let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Tabularize with space+t
+nnoremap <leader>t :Tabularize
+
+" Align comments with space+T
+nnoremap <leader>T :Tabularize /\/\/<CR>
