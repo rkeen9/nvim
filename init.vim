@@ -121,7 +121,7 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <silent><expr> <C-space> coc#refresh()
 
 "switch between header and source file with space+c
-nnoremap <leader>c :CocCommand clangd.switchSourceHeader
+nnoremap <leader>c :CocCommand clangd.switchSourceHeader<return>
 " coc config end
 " shortcuts for tab navigation
 "nnoremap <C-Left> :tabprevious<CR>
