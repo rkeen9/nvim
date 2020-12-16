@@ -12,7 +12,8 @@ Plug 'preservim/nerdtree'
 Plug 'vimlab/split-term.vim'
 Plug 'conornewton/vim-latex-preview'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'godlygeek/tabular'
+"Plug 'vimwiki/vimwiki'
 " Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -199,3 +200,8 @@ nnoremap <leader>; @
 let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" Tabularize with space+t
+nnoremap <leader>t :Tabularize
+
+" Align comments with space+T
+nnoremap <leader>T :Tabularize /\/\/<CR>
