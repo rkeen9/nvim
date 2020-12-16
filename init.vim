@@ -13,7 +13,7 @@ Plug 'vimlab/split-term.vim'
 Plug 'conornewton/vim-latex-preview'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'godlygeek/tabular'
-"Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 " Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
@@ -197,8 +197,8 @@ vnoremap <leader>n :norm
 nnoremap <leader>; @
 
 " vimwiki config
-let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
+"                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Tabularize with space+t
 nnoremap <leader>t :Tabularize
