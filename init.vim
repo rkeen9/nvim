@@ -10,32 +10,49 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'vimlab/split-term.vim'
-"Plug 'Yggdroot/indentLine'
+Plug 'conornewton/vim-latex-preview'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'godlygeek/tabular'
+" Plug 'vimwiki/vimwiki'
+" Plug 'Yggdroot/indentLine'
 " Initialize plugin system
 call plug#end()
+
+"remap leader to space
+let mapleader = "\<Space>"
 set number relativenumber
+
 "escapes insert mode when you type kj
 imap kj <Esc>
+
 "changes a tab to 4 spaces
 set expandtab ts=4 sw=4 ai
+
 "changes vim clipboard to system clipboard
 set clipboard=unnamedplus
+
 "makes it so vim does not empty clipboard upon exiting (requires xsel on system)
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
+
 "makes things automatically indent
 set autoindent
+
 "makes it so new split windows open to the right 
 set splitbelow splitright
+
 "get rid of autocommenting 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 "making 'd' delete instead of cut
 nnoremap d "_d
 vnoremap d "_d
+
 "Shortcuts for split navigation
-map <C-H> <C-w>h
-map <C-J> <C-w>j
-map <C-K> <C-w>k
-map <C-L> <C-w>l
+map <leader>w <C-w>
+"map <C-H> <C-w>h
+"map <C-J> <C-w>j
+"map <C-K> <C-w>k
+"map <C-L> <C-w>l
 
 "airline configuration
 " set t_Co=256
@@ -64,22 +81,24 @@ nnoremap ;q :wq<Return>
 noremap ;; :w<Return>
 
 "qq to exit vim without saving
-noremap qq :q!<Return>
+noremap qq :q<Return>
 
 set nofoldenable
 
-"colour scheme and font
+"colour scheme and font customized to use terminal transparency
 set backspace=2
 set background=dark
-autocmd vimenter * colorscheme gruvbox
-autocmd vimenter * AirlineTheme gruvbox
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+"autocmd vimenter * AirlineTheme gruvbox
 set encoding=utf-8
 set guifont=Source_Code_Pro_for_Powerline:h11:cANSI:qDRAFT
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 
 syntax on
 let g:netrw_browse_split = 1
 
-" coc config
+" coc config begin
 let g:coc_global_extensions = [
 \ 'coc-snippets',
 "\ 'coc-pairs',
@@ -103,6 +122,9 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
 
+"switch between header and source file with space+c
+nnoremap <leader>c :CocCommand clangd.switchSourceHeader<return>
+" coc config end
 " shortcuts for tab navigation
 "nnoremap <C-Left> :tabprevious<CR>
 "nnoremap <C-Right> :tabnext<CR>
@@ -112,14 +134,14 @@ inoremap <silent><expr> <C-space> coc#refresh()
 " shortcuts for buffer navigation
 set switchbuf=usetab
 
-" open Nerd Tree with ctrl+n
-nmap <C-n> :NERDTreeToggle<CR>
+" open Nerd Tree with space+N in normal mode
+nmap <leader>n :NERDTreeToggle<CR>
 " buffer navigation
 " F5 lists buffers
 :nnoremap <C-Tab> :buffers<CR>:buffer<Space>
 nnoremap <C-h> :bprev<CR>
 nnoremap <C-l> :bnext<CR>
-noremap bd :bdelete<Return>
+noremap <leader>d :bdelete!<Return>
 
 " NerdTree open in tab
 let NERDTreeMapOpenInTab='\r'
@@ -141,11 +163,45 @@ map ]] j0[[%:silent! eval search('{')<CR>
 map [] k$][%:silent! eval search('}', 'b')<CR>
 
 " opposite of shift+J
-:map <C-j> i<CR><Esc>
+map <C-j> i<CR><Esc>
 
 " split resizing
 nnoremap <C-Left> :vertical resize -10 <CR>
 nnoremap <C-Right> :vertical resize +10 <CR>
+nnoremap <C-Up> :resize -10 <CR>
+nnoremap <C-Down> :resize +10 <CR>
 
 "scroll wheel
 set mouse=a
+
+"ctrl+t to open termainal
+nnoremap <leader>t :Term <CR>
+
+"enable spell checking
+set spelllang=en_ca
+set spell
+
+"latex preview
+let g:latex_pdf_viewer="zathura"
+
+"remap ` to space+m
+map <leader>m `
+
+"vsplit with space+v
+nnoremap <leader>v :vsplit <CR>
+
+"norm with space+n
+vnoremap <leader>n :norm 
+
+"remap @ (call macro) to space+;
+nnoremap <leader>; @
+
+" vimwiki config
+" let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
+"                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Tabularize with space+t
+nnoremap <leader>t :Tabularize
+
+" Align comments with space+T
+nnoremap <leader>T :Tabularize /\/\/<CR>
