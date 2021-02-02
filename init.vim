@@ -202,9 +202,13 @@ nnoremap <leader>; @
 " vimwiki config
 " let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
+nnoremap <leader>a :Tabularize
 
-" Align comments with space+T
+" Align comments with space+a
 map <leader>a :Tabularize /
+
+" Align comments with space+A
+nnoremap <leader>A :Tabularize /\/\/<CR>
 
 " automatically change current working directory to current tab
 set autochdir
