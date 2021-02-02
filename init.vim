@@ -109,6 +109,9 @@ let g:coc_global_extensions = [
 \ 'coc-clangd',
 \ ]
 
+" never insert headers
+let g:coc_clangd_args=['--header-insertion=never']
+
 " let b:coc_diagnostic_disable = 1
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -201,7 +204,7 @@ nnoremap <leader>; @
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Align comments with space+T
-nnoremap <leader>T :Tabularize /\/\/<CR>
+map <leader>a :Tabularize /
 
 " automatically change current working directory to current tab
 set autochdir
