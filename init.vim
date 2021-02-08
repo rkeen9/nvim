@@ -208,7 +208,10 @@ nnoremap <leader>a :Tabularize
 map <leader>a :Tabularize /
 
 " Align comments with space+A
-nnoremap <leader>A :Tabularize /\/\/<CR>
+map <leader>Ac :Tabularize /\/\/<CR>
+
+" Align variable definitions with space+v
+map <leader>Av :Tabularize /\([a-zA-Z].\s\+\)\@<=[a-zA-Z].*<CR>
 
 " automatically change current working directory to current tab
 set autochdir
