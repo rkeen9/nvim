@@ -200,8 +200,8 @@ nnoremap <leader>; @
 " let g:vimwiki_list = [{'path': '~/Nextcloud/notes/',
 "                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" Tabularize with space+t
-nnoremap <leader>t :Tabularize
+" Tabularize with space+shift+t
+nnoremap <leader>T :Tabularize
 
 " Align comments with space+T
 nnoremap <leader>T :Tabularize /\/\/<CR>
